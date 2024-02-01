@@ -17,7 +17,7 @@ Route::get('/books', [BooksController::class, 'index']);
 Route::post('/books', [BooksController::class, 'store'])->middleware(['auth:sanctum']);
 Route::patch('/books/{books}', [BooksController::class, 'update'])->middleware(['auth:sanctum']);
 Route::delete('/books/{books}', [BooksController::class, 'destroy'])->middleware(['auth:sanctum']);
-Route::get('/books', [BooksController::class, 'filter']);
+Route::get('/books?', [BooksController::class, 'filter']);
 
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/logout', [AuthController::class, 'logout'])->middleware(['auth:sanctum']);
